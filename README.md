@@ -12,7 +12,7 @@ Clone this repository via Git
 git clone https://github.com/bloodhawk/id_software_realtime_chat
 cd id_software_realtime_chat
 cp .env.example .env
-yarn docker-install && make
+make
 yarn seed
 ```
 
