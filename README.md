@@ -9,10 +9,11 @@ _You must have Docker for Mac/Windows, and Yarn installed and configured before 
 Clone this repository via Git
 
 ```
-git clone TO_DO
+git clone https://github.com/bloodhawk/id_software_realtime_chat
 cd id_software_realtime_chat
 cp .env.example .env
 yarn docker-install && make
+yarn seed
 ```
 
 The listening tcp port definition can be changed if necessary to avoid any local conflicts with other projects.
@@ -39,7 +40,7 @@ By default the application will be available on http://localhost:3000
 Most application code lives in the `/src` directory. The entry point to the app is `/src/server/index.js`. The following are subdirectories of `/src`:
 
 - `/server` - GraphQL server code
-- `/client` - GraphQL client code
+- `/client` - GraphQL client code (Future, basic client is provided by GraphQL playground)
 
 Test code lives in the `/test` directory. The `/test` directory is structured like `/src`. Tests should be nested the same way in both `/test` and `/src`.
 
@@ -48,5 +49,9 @@ Test code lives in the `/test` directory. The `/test` directory is structured li
 See the `scripts` section of `package.json` for a complete list of all the commands available to you.
 
 ## API Doc
+
 The entire GraphQL API can be explored from http://localhost:3005/graphql once you start the server up.
 Note that the port may be different if you changed the env configuration.
+
+To test the functionality in a client, go to the GraphQL playground at http://localhost:3005/playground
+A video detailing this is part of the repo: chatroom.mp4
