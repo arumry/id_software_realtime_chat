@@ -1,0 +1,52 @@
+{
+  "name": "id_software_realtime_chat",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.2.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
+    "mocha": "^3.5.0",
+    "prettier": "^1.7.0",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.13.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "yarn test && lint-staged",
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
+    "test": "mocha --require test/bootstrap.js --recursive",
+    "test-watch": "mocha --require test/bootstrap.js --recursive --reporter min --watch",
+    "start": "docker-compose up",
+    "start-force": "docker-compose up --build --force-recreate",
+    "docker-install": "make docker-yarn-install",
+    "docker-start": "nodemon src/server",
+    "docker-seed": "node seed",
+    "seed": "docker-compose run id-software-node yarn docker-seed"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "bcrypt-promise": "^2.0.0",
+    "bluebird": "^3.5.1",
+    "dotenv": "^6.0.0",
+    "graphql": "^0.13.2",
+    "graphql-middleware": "^1.6.6",
+    "graphql-shield": "^2.2.6",
+    "graphql-yoga": "^1.16.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.10",
+    "merge-graphql-schemas": "^1.5.3",
+    "mongoose": "^5.2.7",
+    "uuid": "^3.3.2"
+  }
+}

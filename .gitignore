@@ -1,0 +1,13 @@
+# npm && yarn
+node_modules
+npm-debug.log
+yarn-error.log
+tmp
+
+# secrets
+.env
+
+# Editors and IDEs
+.vscode/*
+!.vscode/settings.json
+.DS_Store

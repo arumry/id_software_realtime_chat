@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  id-software-node:
+    container_name: id-software-node
+    image: id-software/id-software-node
+    build:
+      context: .
+      dockerfile: docker/api/Dockerfile
+    depends_on:
+      - id-software-mongo
+    volumes:
+      - ./:/app/:delegated
+    ports:
+      - '3005:3005'
+    environment:
+      APP_ENV: 'local'
+  id-software-mongo:
+    container_name: id-software-mongo
+    image: mongo:3.6
+    volumes:
+      - id-software-mongo-data:/data/db
+    ports:
+      - '27017:27017'
+
+volumes:
+  id-software-mongo-data:
+

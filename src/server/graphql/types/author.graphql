@@ -1,0 +1,15 @@
+type Author {
+  id: ID
+  username: String
+  nickname: String
+}
+
+type Query {
+  me: Author
+}
+
+type Mutation {
+  # Returns a JWT for authentication
+  login(username: String!, password: String!): String
+  changeNickname(nickname: String!): Author
+}
