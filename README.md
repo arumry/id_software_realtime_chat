@@ -33,7 +33,7 @@ yarn start
 
 Changes to files will automatically reload the server within the Docker container.
 
-By default the application will be available on http://localhost:3000
+By default the application will be available on http://localhost:3005
 
 ## Project Architecture
 
@@ -50,8 +50,8 @@ See the `scripts` section of `package.json` for a complete list of all the comma
 
 ## API Doc
 
-The entire GraphQL API can be explored from http://localhost:3005/graphql once you start the server up.
+The entire GraphQL API can be explored from http://localhost:3005/playground once you start the server up.
 Note that the port may be different if you changed the env configuration.
 
 To test the functionality in a client, go to the GraphQL playground at http://localhost:3005/playground
-A video detailing this is part of the repo: chatroom.mp4
+You can use multiple tabs to simulate multiple users with different Authorization tokens. A video detailing this is part of the repo: chatroom.mp4.
